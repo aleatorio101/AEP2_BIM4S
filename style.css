@@ -1,0 +1,351 @@
+        
+        :root {
+            --cor-primaria: #2ECC71;
+            --cor-secundaria: #3498DB;
+            --cor-destaque: #E67E22;
+            --cor-fundo: #f4f7f6;
+            --cor-texto-principal: #34495E;
+            --cor-texto-secundario: #7F8C8D;
+            --cor-branco: #FFFFFF;
+            --cor-borda: #dce4e3;
+            --sombra-padrao: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --fonte-titulo: 'Nunito Sans', sans-serif;
+            --fonte-corpo: 'Open Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--fonte-corpo);
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--fonte-titulo);
+            font-weight: 700;
+            color: var(--cor-texto-principal);
+        }
+
+        button {
+            font-family: var(--fonte-titulo);
+            cursor: pointer;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+       
+        .site-header {
+            background-color: var(--cor-branco);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .site-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .logo {
+            font-family: var(--fonte-titulo);
+            font-size: 1.8em;
+            font-weight: 800;
+            color: var(--cor-primaria);
+            text-decoration: none;
+        }
+        .logo .fa-city {
+            margin-right: 8px;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .main-nav ul li {
+            margin-left: 20px;
+        }
+
+        .main-nav ul li a {
+            text-decoration: none;
+            color: var(--cor-texto-secundario);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav ul li a:hover,
+        .main-nav ul li a.active {
+            color: var(--cor-primaria);
+        }
+
+        .btn-nova-ideia {
+            background-color: var(--cor-destaque);
+            color: var(--cor-branco);
+            font-weight: 700;
+        }
+        .btn-nova-ideia:hover {
+            background-color: #d35400;
+        }
+
+        
+        .hero-section {
+            background: linear-gradient(rgba(46, 204, 113, 0.8), rgba(52, 152, 219, 0.7)), url('https://via.placeholder.com/1200x300.png?text=Imagem+Representativa+da+Cidade') no-repeat center center/cover;
+            color: var(--cor-branco);
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .hero-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: var(--cor-branco);
+        }
+        .hero-section p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+
+        
+        #feed-denuncias {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card-ideia {
+            background-color: var(--cor-branco);
+            border-radius: 8px;
+            box-shadow: var(--sombra-padrao);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-ideia:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .card-ideia h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            color: var(--cor-primaria);
+        }
+
+        .card-categoria {
+            background-color: var(--cor-secundaria);
+            color: var(--cor-branco);
+            font-size: 0.8em;
+            padding: 3px 8px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            align-self: flex-start;
+            font-weight: 600;
+        }
+        .card-categoria.residuos { background-color: #95A5A6; } 
+        .card-categoria.mobilidade { background-color: #3498DB; } 
+        .card-categoria.iluminacao { background-color: #F1C40F; color: #333; } 
+        .card-categoria.habitacao { background-color: #8E44AD; } 
+        .card-categoria.outros { background-color: #7F8C8D; }
+
+
+        .card-ideia p {
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            flex-grow: 1; 
+        }
+
+        .card-ideia .interacoes {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--cor-borda);
+            padding-top: 15px;
+            margin-top: auto; 
+        }
+
+        .card-ideia .interacoes button {
+            background: none;
+            color: var(--cor-texto-secundario);
+            padding: 5px 10px;
+            font-size: 0.9em;
+        }
+        .card-ideia .interacoes button:hover {
+            color: var(--cor-destaque);
+        }
+        .card-ideia .interacoes button .fas {
+            margin-right: 5px;
+        }
+        .card-ideia .interacoes .curtido {
+            color: var(--cor-destaque);
+            font-weight: bold;
+        }
+
+
+        
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5); 
+            align-items: center; 
+            justify-content: center; 
+        }
+
+        .modal-content {
+            background-color: var(--cor-branco);
+            margin: auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--sombra-padrao);
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .close-button {
+            color: var(--cor-texto-secundario);
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-button:hover {
+            color: var(--cor-texto-principal);
+        }
+
+        .modal-content h2 {
+            color: var(--cor-primaria);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--cor-texto-secundario);
+        }
+
+        .form-group input[type="text"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--cor-borda);
+            border-radius: 5px;
+            font-family: var(--fonte-corpo);
+            font-size: 1em;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn-submit-ideia {
+            background-color: var(--cor-primaria);
+            color: var(--cor-branco);
+            padding: 12px 25px;
+            width: 100%;
+            font-size: 1.1em;
+            font-weight: 700;
+        }
+        .btn-submit-ideia:hover {
+            background-color: #27ae60; 
+        }
+
+        /* Rodapé */
+        .site-footer {
+            background-color: var(--cor-texto-principal);
+            color: var(--cor-fundo);
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        .site-footer p {
+            margin-bottom: 5px;
+        }
+        .site-footer a {
+            color: var(--cor-primaria);
+            text-decoration: none;
+        }
+        .site-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .site-header .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            .main-nav ul {
+                padding-left: 0;
+                justify-content: center; 
+                flex-wrap: wrap; 
+            }
+            .main-nav ul li {
+                margin: 5px 10px; 
+            }
+            .btn-nova-ideia {
+                margin-top: 10px;
+                width: 80%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-section h1 {
+                font-size: 2em;
+            }
+            .hero-section p {
+                font-size: 1em;
+            }
+
+            #feed-denuncias {
+                grid-template-columns: 1fr; 
+            }
+            .modal-content {
+                width: 95%;
+                padding: 20px;
+            }
+        }
